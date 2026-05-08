@@ -289,7 +289,7 @@ def render_recria(prefix: str = "recria"):
     with colB:
         sens_preco_venda = st.slider(
             "Preço venda (US$/kg PV)",
-            min_value=1.5, max_value=3.5,
+            min_value=2.3, max_value=5.0,
             value=float(preco_venda_kg), step=0.01,
             key=f"{prefix}_sens_preco_venda"
         )
