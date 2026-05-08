@@ -29,7 +29,7 @@ def render_recria(prefix: str = "recria"):
             key=f"{prefix}_preco_compra_pyg"
         )
         cambio = st.number_input(
-            "Câmbio (₲/US$)", value=7320.0, min_value=0.0, step=10.0, format="%.2f",
+            "Câmbio (₲/US$)", value=6120.0, min_value=0.0, step=10.0, format="%.2f",
             key=f"{prefix}_cambio"
         )
 
@@ -43,7 +43,7 @@ def render_recria(prefix: str = "recria"):
         )
 
         custo_aluguel = st.number_input(
-            "Custo aluguel (US$/mês)", value=5.40, min_value=0.0, step=0.1, format="%.2f",
+            "Custo aluguel (US$/mês)", value=5.50, min_value=0.0, step=0.1, format="%.2f",
             key=f"{prefix}_custo_aluguel"
         )
         custo_nutricional = st.number_input(
@@ -56,21 +56,21 @@ def render_recria(prefix: str = "recria"):
         )
 
         frete = st.number_input(
-            "Frete (US$/cab)", value=8.0, min_value=0.0, step=0.5, format="%.2f",
+            "Frete (US$/cab)", value=15.0, min_value=0.0, step=0.5, format="%.2f",
             key=f"{prefix}_frete"
         )
         comissao = st.number_input(
-            "Comissão (US$/cab)", value=4.0, min_value=0.0, step=0.5, format="%.2f",
+            "Comissão (US$/cab)", value=7.0, min_value=0.0, step=0.5, format="%.2f",
             key=f"{prefix}_comissao"
         )
 
         juros_anual = st.number_input(
-            "Juros anual (%)", value=8.5, min_value=0.0, step=0.1, format="%.2f",
+            "Juros anual (%)", value=7.5, min_value=0.0, step=0.1, format="%.2f",
             key=f"{prefix}_juros_anual"
         ) / 100.0
 
         preco_venda_kg = st.number_input(
-            "Preço venda (US$/kg PV)", value=2.40, min_value=0.0, step=0.01, format="%.2f",
+            "Preço venda (US$/kg PV)", value=3.00, min_value=0.0, step=0.01, format="%.2f",
             key=f"{prefix}_preco_venda_kg"
         )
 
@@ -202,8 +202,8 @@ def render_recria(prefix: str = "recria"):
 
         elementos.append(Paragraph("Parâmetros de Compra", styles["TituloSecao"]))
         tabela_params = Table([
-            ["Câmbio (₲/US$)", f"{cambio:,.0f}"],
-            ["Preço bezerro (₲/kg PV)", f"{preco_compra_pyg:,.0f}"],
+            ["Câmbio (G/US$)", f"{cambio:,.0f}"],
+            ["Preço bezerro (G/kg PV)", f"{preco_compra_pyg:,.0f}"],
             ["Preço bezerro (US$/kg PV)", f"{preco_compra_usd_kg:.2f}"],
             ["Preço de venda (US$/kg PV)", f"{preco_venda_kg:.2f}"],
             ["Ágio (%)", f"{agio:.2f}%"],
