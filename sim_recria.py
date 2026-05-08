@@ -25,7 +25,7 @@ def render_recria(prefix: str = "recria"):
             key=f"{prefix}_peso_inicial"
         )
         preco_compra_pyg = st.number_input(
-            "Preço compra (₲/kg PV)", value=20000.0, min_value=0.0, step=100.0, format="%.2f",
+            "Preço compra (₲/kg PV)", value=25000.0, min_value=0.0, step=100.0, format="%.2f",
             key=f"{prefix}_preco_compra_pyg"
         )
         cambio = st.number_input(
