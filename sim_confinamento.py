@@ -12,12 +12,12 @@ def render_confinamento(prefix: str = "conf"):
 
     if dados_recria is not None:
         peso_inicial_padrao = float(dados_recria.get("peso_final", 350.0))
-        preco_compra_padrao = float(dados_recria.get("preco_venda_kg", 11.30))
+        preco_compra_padrao = float(dados_recria.get("preco_venda_kg", 3.00))
         st.info(f"Link automático: entrada do confinamento = saída da recria "
                 f"(Peso: {peso_inicial_padrao:.2f} kg | Preço: {preco_compra_padrao:.2f} $/kg PV)")
     else:
         peso_inicial_padrao = 350.0
-        preco_compra_padrao = 11.30
+        preco_compra_padrao = 3.00
         st.warning("Ainda não existe saída da Recria. Use a aba Recria primeiro.")
 
     # ==============================
@@ -75,7 +75,7 @@ def render_confinamento(prefix: str = "conf"):
         )
 
         custos_extras = st.number_input(
-            "Custos extras ($/animal)", value=0.0, min_value=0.0,
+            "Custos extras ($/animal)", value=15.0, min_value=0.0,
             step=0.10, format="%.2f", key=f"{prefix}_extras"
         )
 
@@ -99,7 +99,7 @@ def render_confinamento(prefix: str = "conf"):
     custo_servicos = servicos_operacionais * dias
     despesas_totais = custo_nutricional + custo_servicos + custos_extras
 
-    juros = valor_compra * juros_mes * (dias / 30)
+    juros = valor_compra * juros_mes * (dias / 30.5)
     custo_total = valor_compra + despesas_totais + juros
 
     receita = carcaca_final * preco_venda_kg
