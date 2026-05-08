@@ -86,7 +86,7 @@ def render_recria(prefix: str = "recria"):
     gpv = peso_final - peso_inicial
 
     meses = dias / 30.5
-    custo_mensal = custo_aluguel + custo_nutricional + custo_operacional
+    custo_mensal = custo_aluguel + custo_nutricional + custo_operacional + frete
     custo_total_periodo = custo_mensal * meses
 
     custo_total = valor_compra_usd + custo_total_periodo + frete + comissao
