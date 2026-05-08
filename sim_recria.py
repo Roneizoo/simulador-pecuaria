@@ -89,12 +89,12 @@ def render_recria(prefix: str = "recria"):
     custo_mensal = custo_aluguel + custo_nutricional + custo_operacional
     custo_total_periodo = custo_mensal * meses
 
-    custo_total = valor_compra_usd + custo_total_periodo + frete + comissao
+    custo_total = valor_compra_usd + custo_total_periodo + frete + comissao + juros_valor
 
     receita = peso_final * preco_venda_kg
     juros_valor = valor_compra_usd * juros_anual * (dias / 365)
 
-    lucro = receita - custo_total - juros_valor
+    lucro = receita - custo_total
 
     margem_periodo = (lucro / receita * 100) if receita > 0 else 0
     margem_mensal = (margem_periodo / meses) if meses > 0 else 0
