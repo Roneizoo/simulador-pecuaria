@@ -60,17 +60,17 @@ def render_confinamento(prefix: str = "conf"):
         )
 
         preco_venda_kg = st.number_input(
-            "Valor de venda ($/kg carcaça)", value=21.40, min_value=0.0, step=0.01,
+            "Valor de venda ($/kg carcaça)", value=4.90, min_value=0.0, step=0.01,
             format="%.2f", key=f"{prefix}_preco_venda"
         )
 
         diaria = st.number_input(
-            "Custo nutricional ($/dia)", value=14.50, min_value=0.0, step=0.1,
+            "Custo nutricional ($/dia)", value=2.75, min_value=0.0, step=0.1,
             format="%.2f", key=f"{prefix}_diaria"
         )
 
         servicos_operacionais = st.number_input(
-            "Serviços operacionais ($/animal/dia)", value=1.0, min_value=0.0,
+            "Serviços operacionais ($/animal/dia)", value=0.40, min_value=0.0,
             step=0.10, format="%.2f", key=f"{prefix}_servicos"
         )
 
